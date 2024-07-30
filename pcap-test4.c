@@ -3,9 +3,6 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <arpa/inet.h> // ip 주소 변환 위한 함수 포함
-// #include <netinet/ip.h> // ip 헤더 구조체 정의
-// #include <netinet/tcp.h> // tcp 헤더 구조체 정의
-//#include <netinet/ether.h> // ethernet 헤더 구조체 정의
 
 /*
  *  Ethernet II header
@@ -17,20 +14,6 @@ struct libnet_ethernet_hdr
     u_int8_t  ether_shost[6];   /* source ethernet address */
     u_int16_t ether_type;       /* protocol */ 
 };
-
-
-// /*
-//  * Source Route Entries (SRE)
-//  * This is used for GRE as the Routing field is a list of SREs - RFC 1701
-//  * Base header size: 4 bytes
-//  */
-// struct libnet_gre_sre_hdr
-// {
-//     u_int16_t af;  /* address familly */
-//     u_int8_t sre_offset;
-//     u_int8_t sre_length;
-//     u_int8_t *routing;
-// };
 
 
 /*
